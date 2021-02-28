@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace CSharp.Controllers
 {
     [Route("/api/[controller]")]
-    public class OrdersController : Controller
+    public class CustomersController : Controller
     {
-        
+       
     }
 }
