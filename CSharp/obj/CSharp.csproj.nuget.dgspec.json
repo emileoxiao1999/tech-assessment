@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj": {}
+    "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj": {
+    "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
+        "projectUniqueName": "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
         "projectName": "CSharp",
-        "projectPath": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
-        "packagesPath": "C:\\Users\\wassi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\obj\\",
+        "projectPath": "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
+        "packagesPath": "C:\\Users\\emile\\.nuget\\packages\\",
+        "outputPath": "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\wassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\emile\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -58,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
