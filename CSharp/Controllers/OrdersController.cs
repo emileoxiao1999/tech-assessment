@@ -26,10 +26,22 @@ namespace CSharp.Controllers
             return orders;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateOrder([FromBody] SaveOrderResource resource)
-        {
 
+        [Route("{id}")]
+        [HttpGet]
+        public async Task<ActionResult<Order>> GetOrderById(int id)
+        {
+            var orders = await orderService.GetOrderById(id);
+            return orders;
+        }
+
+
+
+        [HttpPost]
+        public async Task<ActionResult<Order>> CreateOrder([FromBody] Order order)
+        {
+            await orderService.CreateOrder(order);
+            return Ok(order);
         }
     }
 }

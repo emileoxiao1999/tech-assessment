@@ -13,5 +13,7 @@ namespace CSharp.Domain.Services
 
         Task<ActionResult<Order>> CreateOrder(Order order);
 
+        Task<ActionResult<Order>> GetOrderById(int id);
+
     }
 }

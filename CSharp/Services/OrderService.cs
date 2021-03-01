@@ -1,6 +1,7 @@
 ﻿using CSharp.Domain.Models;
 using CSharp.Domain.Repositories;
 using CSharp.Domain.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,17 @@ namespace CSharp.Services
         {
             return await orderRepository.GetAllOrdersByCustomerId(id);
         }
+
+        public async Task<ActionResult<Order>> CreateOrder(Order order)
+        {
+            return await orderRepository.CreateOrder(order);
+        }
+
+        public async Task<ActionResult<Order>> GetOrderById(int id)
+        {
+            return await orderRepository.GetOrderById(id);
+        }
+
+
     }
 }

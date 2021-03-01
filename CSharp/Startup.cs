@@ -32,6 +32,7 @@ namespace CSharp
 		{
 			services.AddControllers();
 
+
 			services.AddDbContext<CSharpDbContext>(options => {
 
 				options.UseInMemoryDatabase("CSharp-in-memory");
@@ -42,6 +43,7 @@ namespace CSharp
 			services.AddScoped<ICustomerService, CustomerService>();
 			services.AddScoped<IOrderRepository, OrderRepository>();
 			services.AddScoped<IOrderService, OrderService>();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +59,7 @@ namespace CSharp
 			app.UseRouting();
 
 			app.UseAuthorization();
+
 
 			app.UseEndpoints(endpoints =>
 			{
