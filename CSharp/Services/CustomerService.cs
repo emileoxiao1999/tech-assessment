@@ -18,14 +18,14 @@ namespace CSharp.Services
             customerRepository = cRepository;
         }
 
-        public Task<IEnumerable<Order>> GetAllOrders()
+        public async Task<IEnumerable<Order>> GetAllOrders()
         {
-            throw new NotImplementedException();
+            return await customerRepository.GetAllOrders();
         }
 
-        public Task<IEnumerable<Customer>> GetCustomers()
+        public async Task<IEnumerable<Customer>> GetCustomers()
         {
-            throw new NotImplementedException();
+            return await customerRepository.GetCustomers();
         }
     }
 }
