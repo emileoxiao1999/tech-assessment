@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lBtXYB0nPwiYgP60EIR048oUmp7FdSI8grQvKhTn8J/h+ZJEKWP5YI2JcX/e4CXq1CMRTSZ11wDuE7+uDyc32w==",
+  "dgSpecHash": "jHNLpvnDDZC1sr6BvRzDBXNfSB1lSUsbhxoX3FSfiDTsWOgw5Fc9UbkXySG3I3ahxk4N+5AXQr6ZzoUlfP1s/w==",
   "success": true,
   "projectFilePath": "C:\\Coding\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.3\\microsoft.entityframeworkcore.5.0.3.nupkg.sha512",
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.3\\microsoft.entityframeworkcore.abstractions.5.0.3.nupkg.sha512",
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.3\\microsoft.entityframeworkcore.analyzers.5.0.3.nupkg.sha512",
+    "C:\\Users\\emile\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\5.0.3\\microsoft.entityframeworkcore.inmemory.5.0.3.nupkg.sha512",
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.3\\microsoft.entityframeworkcore.relational.5.0.3.nupkg.sha512",
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\emile\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

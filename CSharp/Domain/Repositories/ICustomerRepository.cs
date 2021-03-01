@@ -10,6 +10,5 @@ namespace CSharp.Domain.Repositories
     {
         Task<IEnumerable<Customer>> GetCustomers();
 
-        Task<IEnumerable<Order>> GetAllOrders();
     }
 }

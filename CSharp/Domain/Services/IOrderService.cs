@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CSharp.Domain.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CSharp.Domain.Services
 {
-    interface IOrderService
+    public interface IOrderService
     {
-        Task<IEnumerable<Order>> GetOrders();
+        Task<IEnumerable<Order>> GetAllOrdersByCustomerId(int id);
+
+        Task<ActionResult<Order>> CreateOrder(Order order);
 
     }
 }

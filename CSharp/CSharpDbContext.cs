@@ -10,8 +10,8 @@ namespace CSharp
     public class CSharpDbContext : DbContext
     {
 
-        DbSet<Order> Orders { get; set; }
-        DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public CSharpDbContext(DbContextOptions<CSharpDbContext> options) : base(options) { }
 

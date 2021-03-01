@@ -10,6 +10,5 @@ namespace CSharp.Domain.Services
     {
         Task<IEnumerable<Customer>> GetCustomers();
 
-        Task<IEnumerable<Order>> GetAllOrders();
     }
 }

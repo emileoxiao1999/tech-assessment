@@ -18,11 +18,6 @@ namespace CSharp.Services
             customerRepository = cRepository;
         }
 
-        public async Task<IEnumerable<Order>> GetAllOrders()
-        {
-            return await customerRepository.GetAllOrders();
-        }
-
         public async Task<IEnumerable<Customer>> GetCustomers()
         {
             return await customerRepository.GetCustomers();

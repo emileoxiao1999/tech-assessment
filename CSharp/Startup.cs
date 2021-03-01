@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using CSharp.Domain.Repositories;
+using CSharp.Domain.Services;
+using CSharp.Services;
 
 namespace CSharp
 {
@@ -27,6 +31,17 @@ namespace CSharp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+
+			services.AddDbContext<CSharpDbContext>(options => {
+
+				options.UseInMemoryDatabase("CSharp-in-memory");
+
+			});
+
+			services.AddScoped<ICustomerRepository, CustomerRepository>();
+			services.AddScoped<ICustomerService, CustomerService>();
+			services.AddScoped<IOrderRepository, OrderRepository>();
+			services.AddScoped<IOrderService, OrderService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
