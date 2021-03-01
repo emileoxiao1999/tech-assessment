@@ -12,9 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using CSharp.Domain.Repositories;
-using CSharp.Domain.Services;
-using CSharp.Services;
 
 namespace CSharp
 {
@@ -38,11 +35,6 @@ namespace CSharp
 				options.UseInMemoryDatabase("CSharp-in-memory");
 
 			});
-
-			services.AddScoped<ICustomerRepository, CustomerRepository>();
-			services.AddScoped<ICustomerService, CustomerService>();
-			services.AddScoped<IOrderRepository, OrderRepository>();
-			services.AddScoped<IOrderService, OrderService>();
 
 		}
 

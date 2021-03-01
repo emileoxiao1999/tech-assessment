@@ -1,47 +1,123 @@
-﻿using CSharp.Domain.Models;
-using CSharp.Domain.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using CSharp;
+using CSharp.Domain.Models;
 
 namespace CSharp.Controllers
 {
-    [Route("/api/[controller]")]
-    public class OrdersController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
     {
-        private readonly IOrderService orderService;
+        private readonly CSharpDbContext _context;
 
-        public OrdersController(IOrderService oService)
+        public OrdersController(CSharpDbContext context)
         {
-            orderService = oService;
+            _context = context;
         }
 
-        [Route("customerid/{id}")]
+        // GET: api/Orders
         [HttpGet]
-        public async Task<IEnumerable<Order>> GetAllOrdersByCustomerIdAsync(int id)
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            var orders = await orderService.GetAllOrdersByCustomerId(id);
-            return orders;
+            return await _context.Orders.ToListAsync();
         }
 
-
-        [Route("{id}")]
-        [HttpGet]
-        public async Task<ActionResult<Order>> GetOrderById(int id)
+        // GET: api/Orders/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetOrder(int id)
         {
-            var orders = await orderService.GetOrderById(id);
-            return orders;
+            var order = await _context.Orders.FindAsync(id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            return order;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetAllOrdersByCustomerId(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
 
+            if (order == null)
+            {
+                return NotFound();
+            }
 
+            return order;
+        }
+
+        // PUT: api/Orders/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutOrder(int id, Order order)
+        {
+            if (id != order.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(order).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OrderExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/Orders
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Order>> CreateOrder([FromBody] Order order)
+        public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            await orderService.CreateOrder(order);
-            return Ok(order);
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+        }
+
+        // DELETE: api/Orders/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Order>> DeleteOrder(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            _context.Orders.Remove(order);
+            await _context.SaveChangesAsync();
+
+            return order;
+        }
+
+        private bool OrderExists(int id)
+        {
+            return _context.Orders.Any(e => e.Id == id);
         }
     }
 }

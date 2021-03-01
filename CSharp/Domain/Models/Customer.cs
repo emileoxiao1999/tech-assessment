@@ -23,6 +23,6 @@ namespace CSharp.Domain.Models
 
         public string phoneNumber { get; set; }
 
-        public IList<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<Order> Orders { get; set; }
     }
 }

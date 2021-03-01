@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,8 +20,8 @@ namespace CSharp.Domain.Models
 
         public string Description { get; set; }
 
+        [ForeignKey("Customer")]
         public int CustomerId { get; set; }
-
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }
